@@ -8,4 +8,5 @@ services:
       - VIRTUAL_HOST=localhost
     volumes:
       - ./www:/usr/share/nginx/html
+      - ./NginxConfig/default.conf:/etc/nginx/conf.d/default.conf
     restart: always
