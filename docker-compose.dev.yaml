@@ -6,4 +6,6 @@ services:
     image: nginx
     environment:
       - VIRTUAL_HOST=localhost
+    volumes:
+      - ./www:/usr/share/nginx/html
     restart: always
