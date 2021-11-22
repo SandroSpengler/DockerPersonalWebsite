@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  webdefault:
+    container_name: "nginxDev"
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=localhost
+    restart: always
