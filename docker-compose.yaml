@@ -27,6 +27,17 @@ services:
       - nginx_html:/usr/share/nginx/html
     restart: always
 
+  webdefault:
+    container_name: "nginxProd"
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=eloinflater.com
+      - LETSENCRYPT_HOST=eloinflater.com
+    volumes:
+      - ~/Docker/FrontEnds/LeagueAbuser:/usr/share/nginx/html
+      - ./NginxConfig/default.conf:/etc/nginx/conf.d/default.conf
+    restart: always
+
 volumes:
   #### NGINX reverse proxy container volumes
   nginx_certs:
