@@ -8,7 +8,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       ### required for Let's Encrypt certificates
-      - certs:/etc/nginx/certs:ro
+      # - certs:/etc/nginx/certs:ro
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
     networks:
@@ -16,20 +16,20 @@ services:
       - AppNetwork
       # - LeagueAbuserNetwork
 
-  letsencrypt:
-    container_name: "letsencrypt"
-    image: nginxproxy/acme-companion
-    environment:
-      - DEFAULT_EMAIL=sandro.spengler@web.de
-      - NGINX_PROXY_CONTAINER=nginxproxy
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - nginx_vhosts:/etc/nginx/vhost.d
-      - nginx_html:/usr/share/nginx/html
-      - certs:/etc/nginx/certs:rw
-    networks:
-      - MainNetwork
-    restart: always
+  # letsencrypt:
+  #   container_name: "letsencrypt"
+  #   image: nginxproxy/acme-companion
+  #   environment:
+  #     - DEFAULT_EMAIL=sandro.spengler@web.de
+  #     - NGINX_PROXY_CONTAINER=nginxproxy
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - nginx_vhosts:/etc/nginx/vhost.d
+  #     - nginx_html:/usr/share/nginx/html
+  #     - certs:/etc/nginx/certs:rw
+  #   networks:
+  #     - MainNetwork
+  #   restart: always
 
   webdefault:
     container_name: "nginxMain"
