@@ -14,7 +14,7 @@ services:
     networks:
       - MainNetwork
       - AppNetwork
-      - LeagueAbuserNetwork
+      # - LeagueAbuserNetwork
 
   letsencrypt:
     container_name: "letsencrypt"
