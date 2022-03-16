@@ -41,20 +41,20 @@ services:
       - AppNetwork
     restart: always
 
-  leaugeabuser:
-    container_name: "nginxLeague"
-    image: nginx
-    environment:
-      - VIRTUAL_HOST=xxx
-      - LETSENCRYPT_HOST=xxx
-    networks:
-      - LeagueAbuserNetwork
-    restart: always
+  # leaugeabuser:
+  #   container_name: "nginxLeague"
+  #   image: nginx
+  #   environment:
+  #     - VIRTUAL_HOST=xxx
+  #     - LETSENCRYPT_HOST=xxx
+  #   networks:
+  #     - LeagueAbuserNetwork
+  #   restart: always
 
 networks:
   MainNetwork:
   AppNetwork:
-  LeagueAbuserNetwork:
+  # LeagueAbuserNetwork:
 
 volumes:
   nginx_certs:

@@ -5,20 +5,20 @@ services:
     container_name: "nginxProd"
     image: nginx
     environment:
-      - VIRTUAL_HOST=sandrospengler.com
-      - LETSENCRYPT_HOST=sandrospengler.com
-    volumes:
-      - ~/Docker/FrontEnds/ReactApp:/usr/share/nginx/html
-      - ./NginxConfig/default.conf:/etc/nginx/conf.d/default.conf
-    restart: always
-
-  leaugeabuser:
-    container_name: "nginxProdLeague"
-    image: nginx
-    environment:
-      - VIRTUAL_HOST=leagueabuser.sandrospengler.com
-      - LETSENCRYPT_HOST=leagueabuser.sandrospengler.com
+      - VIRTUAL_HOST=eloinflater.com
+      - LETSENCRYPT_HOST=eloinflater.com
     volumes:
       - ~/Docker/FrontEnds/LeagueAbuser:/usr/share/nginx/html
       - ./NginxConfig/default.conf:/etc/nginx/conf.d/default.conf
     restart: always
+
+  # leaugeabuser:
+  #   container_name: "nginxProdLeague"
+  #   image: nginx
+  #   environment:
+  #     - VIRTUAL_HOST=leagueabuser.sandrospengler.com
+  #     - LETSENCRYPT_HOST=leagueabuser.sandrospengler.com
+  #   volumes:
+  #     - ~/Docker/FrontEnds/LeagueAbuser:/usr/share/nginx/html
+  #     - ./NginxConfig/default.conf:/etc/nginx/conf.d/default.conf
+  #   restart: always
